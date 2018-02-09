@@ -1,21 +1,18 @@
 <template>
   <div>
     <h1>Interventions</h1>
-    <formintervention></formintervention>
-    <interventionslist></interventionslist>
+    <tableau></tableau>
   </div>
 </template>
 
 
 <script>
-  import interventionslist from '@/components/Interventions/InterventionsList.vue'
-  import formintervention from '@/components/FormPanel/FormPanel.vue'
+  import tableau from '@/components/Tableau/Tableau.vue'
 
   export default {
     name: 'Home',
     components: {
-      interventionslist,
-      formintervention
+      tableau,
     }
   }
 </script>

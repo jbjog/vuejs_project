@@ -1,6 +1,4 @@
 <template>
-  <div>
-    <h1>Interventions</h1>
     <div  class="responsive-table-line">
       <table id="listeinterventions"  class="table table-bordered">
         <thead>
@@ -16,16 +14,7 @@
         <interventions></interventions>
       </table>
     </div>
-  </div>
 </template>
 
-<script>
-  import interventions from '@/components/Interventions/Interventions.vue'
-
-  export default {
-    name: 'InterventionsList',
-    components: {
-      interventions
-    }
-  }
-</script>
+<script src="./Tableau.js"/>
+<style src="./Tableau.css"/>
