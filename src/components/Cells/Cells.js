@@ -27,9 +27,9 @@ export default {
   },
   computed: {
     listData: function () {
-      for(var key in this.lists){
+      for(var key in this.$store.getters.getLists){
         if (key===this.value_type){
-          return this.lists[key];
+          return this.$store.getters.getLists[key];
         }
       }
       return [];
