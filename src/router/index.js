@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import InterventionsList from '@/components/Interventions/InterventionsList.vue'
+import Home from '@/components/Home.vue'
 
 
 
@@ -10,8 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'InterventionsList',
-      component: InterventionsList
+      name: 'Home',
+      component: Home
     }
   ]
 })
