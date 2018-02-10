@@ -1,6 +1,6 @@
 <template>
   <tbody>
-    <tr v-for="task in toto">
+    <tr v-for="task in getInterventions">
       <cells class="col1" v-bind:cell_value="task.id" edit_type="none"></cells>
       <cells class="col2" v-bind:cell_value="task.titre" edit_type="text"></cells>
       <cells class="col3" v-bind:cell_value="task.resumee" edit_type="text"></cells>

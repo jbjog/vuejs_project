@@ -7,24 +7,12 @@ export default {
   },
   data() {
     return {
-      toto: [
-        {
-          id:1,
-          titre: 'ma première tâche',
-          resumee: 'description',
-          affectation: 'Pierre',
-          client: 'CESI',
-          etat: 'Terminé'
-        },
-        {
-          id:2,
-          titre: 'ma deuxième tâche',
-          resumee: 'description',
-          affectation: 'Paul',
-          client: 'Mairie',
-          etat: 'En cours'
-        },
-      ]
+
+    }
+  },
+  computed: {
+    getInterventions: function () {
+      return this.$store.getters.getInterventions;
     }
   }
 }
