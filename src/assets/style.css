@@ -76,3 +76,10 @@ td > input {
   display: inline-block;
   width: 100%;
 }
+.v--modal-overlay{
+  background: rgba(0,0,0, 0.7);
+}
+.v--modal-box{
+  border-radius: 5%;
+  padding: 2%;
+}

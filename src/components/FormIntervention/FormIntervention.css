@@ -1,0 +1,18 @@
+label + * {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+#form-buttons{
+  text-align: right;
+}
+#form-header > label{
+  width: 9%;
+  display: inline-block;
+  text-align: right;
+  color: grey;
+}
+#form-header > h2{
+  width: 90%;
+  display: inline-block;
+}

@@ -33,46 +33,30 @@ export default new Vuex.Store({
   },
   getters:{
     //méthodes de récupération de données à appeler via 'this.$store.getters' dans les composants
-    // param state obligatoire
-    getTestValue:function (state) {
-      return state.testValue
-    },
+    //retourne les listes des données fixes
     getLists:function (state) {
       return state.lists
     },
+    //retourne la liste des interventions
     getInterventions:function (state) {
       return state.interventions
     }
   },
   mutations:{
     //méthodes de MAJ à appeler depuis les 'actions'
-    // param state obligatoire
+    //ajoute une intervention à la liste
     addIntervention:function (state,intervention) {
       state.interventions.push(intervention)
-    },
-    changeTestValue:function (state) {
-      state.testValue = !state.testValue
-    },
-    // exemple avec paramètre (1 seul max)
-    changeTestValueTo:function (state,value) {
-      state.testValue = value
-    },
-    changeTestValueTo:function (state,value) {
-      state.testValue = value
     },
   },
   actions:{
     //méthodes de MAJ à appeler via 'this.$store.dispatch' dans les composants
-    // param context obligatoire
+    //ajoute une intervention à la liste
     addIntervention:function (context,intervention) {
       context.commit('addIntervention',intervention)
     },
     changeTestValue:function (context) {
       context.commit('changeTestValue')
-    },
-    //exemple avec paramètre (1 seul max)
-    changeTestValueTo:function (context,value) {
-      context.commit('changeTestValueTo',value)
-    },
+    }
   }
 })

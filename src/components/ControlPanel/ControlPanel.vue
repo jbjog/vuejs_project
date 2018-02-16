@@ -1,7 +1,6 @@
 <template>
   <div id="controlpanel">
-    <input type="button" value="Ajouter" @click="addIntervention"/>
-
+    <button id="show-form-intervention" @click="showFormPanel">Ajouter</button>
   </div>
 </template>
 
