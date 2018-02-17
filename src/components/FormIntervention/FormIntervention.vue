@@ -10,29 +10,29 @@
         <form>
 
           <label for="form-titre">Titre : </label>
-          <input id="form-titre" name="titre" type="text" placeHolder="Titre" required v-model="inputValues.titre">
+          <input id="form-titre" name="titre" type="text" placeHolder="Titre" v-model="inputValues.titre">
 
           <label for="form-client">Client : </label>
-          <input id="form-client" name="client" type="text" placeHolder="Titre" required v-model="inputValues.client">
+          <input id="form-client" name="client" type="text" placeHolder="Client" v-model="inputValues.client">
 
           <label for="form-technicien">Technicien : </label>
-          <select id="form-technicien" required v-model="inputValues.affectation">
+          <select id="form-technicien" v-model="inputValues.affectation">
             <option disabled selected>--Technicien--</option>
             <option v-for="tech in techniciensList">{{tech}}</option>
           </select>
 
           <label for="form-desc">Description : </label>
-          <textarea id="form-desc" name="desc" placeHolder="Description" required v-model="inputValues.resumee">{{inputValues.resumee}}</textarea>
+          <textarea id="form-desc" name="desc" placeHolder="Description" v-model="inputValues.resumee">{{inputValues.resumee}}</textarea>
 
           <label for="form-etat">Etat : </label>
-          <select id="form-etat" required v-model="inputValues.etat">
+          <select id="form-etat" v-model="inputValues.etat">
             <option disabled selected>--Etat--</option>
             <option v-for="etat in etatsList">{{etat}}</option>
           </select>
 
           <div id="form-buttons">
-            <input type="button" @click="cancel" value="Annuler"/>
-            <input v-if="updateState" type="button" @click="validate" value="Modifier"/>
+            <input v-if="!updateState" type="button" @click="cancel" value="Annuler"/>
+            <input v-if="updateState" type="button" @click="close" value="Fermer"/>
             <input v-else type="button" @click="addIntervention" value="Ajouter"/>
           </div>
         </form>

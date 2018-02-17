@@ -16,3 +16,25 @@ label + * {
   width: 90%;
   display: inline-block;
 }
+
+.v--modal-overlay{
+  background: rgba(0,0,0, 0.7);
+}
+.v--modal-box{
+  border-radius: 5%;
+  padding: 2%;
+}
+
+@media (max-width: 500px) {
+  .v--modal-box {
+    width: auto !important;
+  }
+
+  .v--modal-box * {
+    font-size: 1rem;
+  }
+
+  .v--modal-box h2 {
+    font-size: 1.5rem;
+  }
+}
