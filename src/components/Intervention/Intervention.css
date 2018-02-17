@@ -1,0 +1,14 @@
+td > button{
+  width: 100%;
+  margin: 2px;
+}
+td > input ,td > textarea, td > select{
+  display: inline-block;
+  width: 100%;
+}
+td > textarea{
+  resize: none;
+}
+td{
+  vertical-align: middle !important;
+}
