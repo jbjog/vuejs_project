@@ -67,19 +67,37 @@
   .responsive-table-line td.col6:before{
     content:"Etat"
   }
-  .responsive-table-line td.col6{
+  .responsive-table-line td.col7:before{
+    content:"Actions"
+  }
+  .responsive-table-line td.col7{
     margin-bottom: 10px;
   }
-
+}
+@media (min-width: 501px) {
+  .responsive-table-line td.col1{
+    width:5%;
+  }
+  .responsive-table-line td.col2{
+    width:20%;
+  }
+  .responsive-table-line td.col3{
+    width:35%;
+  }
+  .responsive-table-line td.col4{
+    width:10%;
+  }
+  .responsive-table-line td.col5{
+    width:15%;
+  }
+  .responsive-table-line td.col6{
+    width:10%;
+  }
+  .responsive-table-line td.col7{
+    width:5%;
+  }
 }
 td > input {
   display: inline-block;
   width: 100%;
-}
-.v--modal-overlay{
-  background: rgba(0,0,0, 0.7);
-}
-.v--modal-box{
-  border-radius: 5%;
-  padding: 2%;
 }

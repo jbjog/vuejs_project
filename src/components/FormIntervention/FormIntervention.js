@@ -9,10 +9,11 @@ export default {
   methods: {
     beforeOpen(event) {
       this.updateState = event.params.modify;
-      if (!this.updateState)
-        this.initValues();
-      else
-        ;
+      if (!this.updateState){
+        this.initValues()
+      }else{
+        this.inputValues = event.params.intervention;
+      }
     },
     initValues:function () {
       this.inputValues = {
@@ -24,17 +25,14 @@ export default {
         etat: ''
       }
     },
-    validate: function () {
-      console.log('validate');
+    close: function () {
+      this.$modal.hide('form-intervention');
     },
     addIntervention: function () {
-      console.log(this.inputValues);
       this.$store.dispatch('addIntervention',this.inputValues);
-      this.initValues();
       this.$modal.hide('form-intervention');
     },
     cancel: function () {
-      console.log('cancel');
       this.$modal.hide('form-intervention');
     },
   },
