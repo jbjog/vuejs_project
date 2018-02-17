@@ -1,9 +1,9 @@
-import cells from '@/components/Cells/Cells.vue'
+import intervention from '@/components/Intervention/Intervention.vue'
 
 export default {
   name: 'Interventions',
   components: {
-    cells
+    intervention
   },
   data() {
     return {
