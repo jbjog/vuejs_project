@@ -8,28 +8,10 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state:{
     //données brutes
-    testValue:false,
-    interventions:[
-      {
-        id:1,
-        titre: 'ma première tâche',
-        resumee: 'description',
-        affectation: 'Pierre',
-        client: 'CESI',
-        etat: 'Terminé'
-      },
-      {
-        id:2,
-        titre: 'ma deuxième tâche',
-        resumee: 'description',
-        affectation: 'Paul',
-        client: 'Mairie',
-        etat: 'En cours'
-      },
-    ],
+    interventions:data.interventions,
     lists:{
-      techniciens:['Pierre', 'Paul', 'Jacques'],
-      etats:['En Attente','En cours','Terminé']
+      techniciens:data.techniciens,
+      etats:data.techniciens
     }
   },
   getters:{
