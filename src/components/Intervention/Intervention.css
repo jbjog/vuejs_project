@@ -12,3 +12,6 @@ td > textarea{
 td{
   vertical-align: middle !important;
 }
+td > input[type="checkbox"]{
+  width: auto;
+}

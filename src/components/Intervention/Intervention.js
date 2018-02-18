@@ -9,7 +9,8 @@ export default {
         affectation:false,
         client :false,
         etat :false
-      }
+      },
+      selected:false
     }
   },
   methods: {
@@ -35,6 +36,10 @@ export default {
     },
     deleteIntervention(){
       this.$store.dispatch('deleteIntervention',this.internal_value.id);
+    },
+    //MAJ du la liste des interventions selectionnées dans le store
+    sendSelected(){
+      this.$store.dispatch('setSelected', {id:this.internal_value.id,selected:this.selected});
     }
   }
 }

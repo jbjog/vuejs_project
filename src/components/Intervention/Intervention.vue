@@ -1,6 +1,9 @@
 <template>
   <tr>
-    <td class="col1" >{{ internal_value.id }}</td>
+    <td class="col1" >
+      <input type="checkbox" @change="sendSelected" v-model="selected">
+      {{ internal_value.id }}
+    </td>
 
     <td @dblclick="changeEdit('titre')" class="col2">
       <input ref="titre" @blur="unedit('titre')" v-show="edit.titre" type="text" v-model="internal_value.titre"/>

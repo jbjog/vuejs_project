@@ -12,7 +12,8 @@ export default new Vuex.Store({
     lists:{
       techniciens:data.techniciens,
       etats:data.techniciens
-    }
+    },
+    selected:[]
   },
   getters:{
     //méthodes de récupération de données à appeler via 'this.$store.getters' dans les composants
@@ -23,6 +24,10 @@ export default new Vuex.Store({
     //retourne la liste des interventions
     getInterventions:function (state) {
       return state.interventions
+    },
+    //retourne la liste des interventions sélectionnées
+    getSelected:function (state) {
+      return state.selected
     }
   },
   mutations:{
@@ -45,6 +50,18 @@ export default new Vuex.Store({
       if (index !== -1)
         state.interventions.splice(index, 1);
     },
+    //MAJ de l'état de sélection d'une intervention
+    setSelected:function (state,payload){
+      if(payload.selected)
+        state.selected.push(payload.id);
+      else{
+        state.selected.splice(state.selected.indexOf(payload.id),1)
+      }
+    },
+    //initialisation des interventions sélectionnées
+    initSelected:function (state){
+      state.selected = [];
+    }
   },
   actions:{
     //méthodes de MAJ à appeler via 'this.$store.dispatch' dans les composants
@@ -55,6 +72,14 @@ export default new Vuex.Store({
     //suppression d'une intervention
     deleteIntervention:function (context,id) {
       context.commit('deleteIntervention',id)
+    },
+    //MAJ de l'état de sélection d'une intervention
+    setSelected:function (context,payload){
+      context.commit('setSelected',payload);
+    },
+    //initialisation des interventions sélectionnées
+    initSelected:function (context){
+      context.commit('initSelected');
     }
   }
 })
