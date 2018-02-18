@@ -9,9 +9,12 @@
           <th>Affectation</th>
           <th>Client</th>
           <th>Etat</th>
+          <th>Actions</th>
         </tr>
         </thead>
-        <interventions></interventions>
+        <tbody>
+          <intervention v-for="task in getInterventions" :key="task.id" v-bind:elt="task"></intervention>
+        </tbody>
       </table>
     </div>
 </template>
