@@ -1,7 +1,7 @@
 <template>
-  <<div>
+  <div>
 
-  <input @change="catchSearch" type="text" v-model="demo"/>
+  <input v-on:keyup="catchSearch" type="text" v-model="filterValue"/>
 
 </div>
 

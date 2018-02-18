@@ -1,22 +1,24 @@
 export default {
+
+  name: 'GlobalFilter',
+
   props: ['value'],
-  methods: {
-
-    catchSearch() {
-      console.log(this.demo);
-      //this.$emit('newSearchValue', this.demo)
-
-    }
-
-  },
-
   data() {
 
     return {
 
-      demo: ''
+      filterValue: ''
 
     }
 
   },
+  methods: {
+
+    catchSearch() {
+      this.$store.dispatch('changeFilterValue', this.filterValue);
+    }
+
+  },
+
+
 }

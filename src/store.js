@@ -8,7 +8,10 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state:{
     //données brutes
+
     interventions:data.interventions,
+    filterValue:'',
+
     lists:{
       techniciens:data.techniciens,
       etats:data.techniciens
@@ -23,12 +26,37 @@ export default new Vuex.Store({
     },
     //retourne la liste des interventions
     getInterventions:function (state) {
-      return state.interventions
+
+      if (state.filterValue === '') {
+        return state.interventions;
+      } else {
+        let filteredArray = [];
+        let expr = new RegExp(state.filterValue, "i");
+        for (let i = 0; i < state.interventions.length; i++) {
+          let test = false;
+          (Object.values(state.interventions[i])).forEach(function (item, index) {
+
+
+            if (expr.test(item) &&(test === false)) {
+              filteredArray.push(state.interventions[i]);
+              test = true;
+            };
+
+          })
+        }
+        return filteredArray;
+      }
     },
     //retourne la liste des interventions sélectionnées
     getSelected:function (state) {
       return state.selected
     }
+
+
+
+
+
+
   },
   mutations:{
     //méthodes de MAJ à appeler depuis les 'actions'
@@ -36,6 +64,7 @@ export default new Vuex.Store({
     addIntervention:function (state,intervention) {
       state.interventions.push(intervention)
     },
+
     //suppression d'une intervention
     deleteIntervention:function (state,id) {
       let index = -1;
@@ -61,7 +90,12 @@ export default new Vuex.Store({
     //initialisation des interventions sélectionnées
     initSelected:function (state){
       state.selected = [];
+
+    },
+    changeFilterValue:function (state, filtervalue) {
+      state.filterValue = filtervalue;
     }
+
   },
   actions:{
     //méthodes de MAJ à appeler via 'this.$store.dispatch' dans les composants
@@ -78,8 +112,14 @@ export default new Vuex.Store({
       context.commit('setSelected',payload);
     },
     //initialisation des interventions sélectionnées
-    initSelected:function (context){
+    initSelected:function (context) {
       context.commit('initSelected');
+    },
+    changeTestValue:function (context) {
+      context.commit('changeTestValue')
+    },
+    changeFilterValue:function(context, filterValue) {
+      context.commit('changeFilterValue', filterValue);
     }
   }
 })
