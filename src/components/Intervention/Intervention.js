@@ -32,6 +32,9 @@ export default {
     },
     showModifPanel() {
       this.$modal.show('form-intervention',{modify:true,intervention:this.internal_value});
+    },
+    deleteIntervention(){
+      this.$store.dispatch('deleteIntervention',this.internal_value.id);
     }
   }
 }

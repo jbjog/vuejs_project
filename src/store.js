@@ -32,11 +32,11 @@ export default new Vuex.Store({
       state.interventions.push(intervention)
     },
     //suppression d'une intervention
-    deleteIntervention:function (state,intervention) {
+    deleteIntervention:function (state,id) {
       let index = -1;
       //récupération de l'index grace à son id
       for (let i = 0; i < state.interventions.length; i++) {
-        if (state.interventions[i].id === intervention.id) {
+        if (state.interventions[i].id === id) {
           index = i;
           break;
         }
@@ -53,8 +53,8 @@ export default new Vuex.Store({
       context.commit('addIntervention',intervention)
     },
     //suppression d'une intervention
-    deleteIntervention:function (context) {
-      context.commit('deleteIntervention')
+    deleteIntervention:function (context,id) {
+      context.commit('deleteIntervention',id)
     }
   }
 })
