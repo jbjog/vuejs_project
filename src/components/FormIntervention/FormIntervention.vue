@@ -22,7 +22,9 @@
           </select>
 
           <label for="form-desc">Description : </label>
-          <textarea id="form-desc" name="desc" placeHolder="Description" v-model="inputValues.resumee">{{inputValues.resumee}}</textarea>
+          <textarea id="form-desc" name="desc" placeHolder="Description" v-model="inputValues.resumee" rows="5">
+            {{ inputValues.resumee }}
+          </textarea>
 
           <label for="form-etat">Etat : </label>
           <select id="form-etat" v-model="inputValues.etat">
@@ -31,9 +33,9 @@
           </select>
 
           <div id="form-buttons">
-            <input v-if="!updateState" type="button" @click="cancel" value="Annuler"/>
-            <input v-if="updateState" type="button" @click="close" value="Fermer"/>
-            <input v-else type="button" @click="addIntervention" value="Ajouter"/>
+            <button v-if="!updateState"  @click="cancel">Annuler</button>
+            <button v-if="updateState" @click="close">Fermer</button>
+            <button v-else @click="addIntervention">Ajouter</button>
           </div>
         </form>
       </div>

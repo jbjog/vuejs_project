@@ -1,6 +1,6 @@
 <template>
   <div id="controlpanel">
-    <button id="show-form-intervention" @click="showFormPanel">Ajouter</button>
+    <button id="show-form-intervention" class="green" @click="showFormPanel">Ajouter</button>
   </div>
 </template>
 

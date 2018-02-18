@@ -8,7 +8,9 @@
     </td>
 
     <td @dblclick="changeEdit('resumee')" class="col3">
-      <input ref="resumee" @blur="unedit('resumee')" v-show="edit.resumee" type="text" v-model="internal_value.resumee"/>
+      <textarea ref="resumee" @blur="unedit('resumee')" v-show="edit.resumee" v-model="internal_value.resumee" rows="2">
+        {{ internal_value.resumee }}
+      </textarea>
       <span v-show="!edit.resumee">{{ internal_value.resumee }}</span>
     </td>
 
@@ -32,7 +34,8 @@
     </td>
 
     <td class="col7">
-      <button id="show-modif-intervention" @click="showModifPanel">Modifier</button>
+      <button id="show-modif-intervention" class="blue" @click="showModifPanel">Modifier</button>
+      <button id="delete-intervention" class="red" @click="deleteIntervention">Supprimer</button>
     </td>
   </tr>
 </template>

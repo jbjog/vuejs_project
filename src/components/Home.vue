@@ -1,5 +1,6 @@
 <template>
   <div>
+    <img id="logo" src="./../assets/logo.png"/>
     <h1>Interventions</h1>
     <formintervention></formintervention>
     <controlpanel></controlpanel>
