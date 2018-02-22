@@ -16,7 +16,15 @@ export default new Vuex.Store({
       techniciens:data.techniciens,
       etats:data.techniciens
     },
-    selected:[]
+    selected:[],
+    sortState:{
+      id:"",
+      titre:"",
+      resumee:"",
+      affectation:"",
+      client:"",
+      etat:""
+    },
   },
   getters:{
     //méthodes de récupération de données à appeler via 'this.$store.getters' dans les composants
@@ -35,13 +43,10 @@ export default new Vuex.Store({
         for (let i = 0; i < state.interventions.length; i++) {
           let test = false;
           (Object.values(state.interventions[i])).forEach(function (item, index) {
-
-
             if (expr.test(item) &&(test === false)) {
               filteredArray.push(state.interventions[i]);
               test = true;
-            };
-
+            }
           })
         }
         return filteredArray;
@@ -50,13 +55,10 @@ export default new Vuex.Store({
     //retourne la liste des interventions sélectionnées
     getSelected:function (state) {
       return state.selected
+    },
+    getSorted:function (state) {
+      return state.sortState
     }
-
-
-
-
-
-
   },
   mutations:{
     //méthodes de MAJ à appeler depuis les 'actions'
@@ -94,7 +96,22 @@ export default new Vuex.Store({
     },
     changeFilterValue:function (state, filtervalue) {
       state.filterValue = filtervalue;
+    },
+    changeSortValue:function (state, column) {
+      for(let key in state.sortState){
+        if (key===column){
+          if (state.sortState[key]==="a")
+            state.sortState[key] = "d";
+          else
+            state.sortState[key] = "a";
+        }else
+          state.sortState[key] = "";
+      }
+    },
+    sortInterventions:function () {
+      
     }
+    
 
   },
   actions:{
@@ -120,6 +137,9 @@ export default new Vuex.Store({
     },
     changeFilterValue:function(context, filterValue) {
       context.commit('changeFilterValue', filterValue);
+    },
+    changeSortValue:function(context, column) {
+      context.commit('changeSortValue', column);
     }
   }
 })
