@@ -1,9 +1,15 @@
 <template>
     <div  class="responsive-table-line">
       <table id="listeinterventions"  class="table table-bordered">
-        <thead>
+        <tfoot>
         <tr>
-          <th>Id</th>
+        </tr>
+        </tfoot>
+        <thead>
+
+        <tr>
+          <th>
+          </th>
           <th>Titre</th>
           <th>Résumé</th>
           <th>Affectation</th>

@@ -1,4 +1,5 @@
 export default {
+
   props: ['elt'],
   data() {
     return {

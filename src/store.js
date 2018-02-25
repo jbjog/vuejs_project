@@ -11,6 +11,7 @@ export default new Vuex.Store({
 
     interventions:data.interventions,
     filterValue:'',
+    resultInterventions:[],
 
     lists:{
       techniciens:data.techniciens,
@@ -25,7 +26,9 @@ export default new Vuex.Store({
       client:"",
       etat:""
     },
+
   },
+
   getters:{
     //méthodes de récupération de données à appeler via 'this.$store.getters' dans les composants
     //retourne les listes des données fixes
@@ -33,31 +36,57 @@ export default new Vuex.Store({
       return state.lists
     },
     //retourne la liste des interventions
-    getInterventions:function (state) {
+    getInterventions:function (state, getters) {
 
-      if (state.filterValue === '') {
-        return state.interventions;
-      } else {
-        let filteredArray = [];
-        let expr = new RegExp(state.filterValue, "i");
-        for (let i = 0; i < state.interventions.length; i++) {
-          let test = false;
-          (Object.values(state.interventions[i])).forEach(function (item, index) {
-            if (expr.test(item) &&(test === false)) {
-              filteredArray.push(state.interventions[i]);
-              test = true;
-            }
-          })
-        }
-        return filteredArray;
-      }
+
+      state.resultInterventions = state.interventions;
+
+      state.resultInterventions = getters.getFilteredIntervention;
+
+      state.resultInterventions = getters.getFilteredColumnInterventions;
+
+      state.resultInterventions = getters.getSortedInterventions;
+
+      state.resultInterventions = getters.getPageInterventions;
+
+      return state.resultInterventions;
     },
+
+
+
     //retourne la liste des interventions sélectionnées
     getSelected:function (state) {
       return state.selected
     },
     getSorted:function (state) {
       return state.sortState
+    },
+
+    getSortedInterventions: function (state) {
+      return state.resultInterventions ;
+    },
+
+    getPageInterventions: function(state) {
+      return state.resultInterventions;
+    },
+
+    getFilteredColumnInterventions: function(state) {
+      return state.resultInterventions;
+    },
+
+    getFilteredIntervention: function(state) {
+      let filteredArray = [];
+      let expr = new RegExp(state.filterValue, "i");
+      for (let i = 0; i < state.resultInterventions.length; i++) {
+        let test = false;
+        (Object.values(state.resultInterventions[i])).forEach(function (item, index) {
+          if (expr.test(item) &&(test === false)) {
+            filteredArray.push(state.resultInterventions[i]);
+            test = true;
+          }
+        })
+      }
+      return filteredArray;
     }
   },
   mutations:{
@@ -109,9 +138,10 @@ export default new Vuex.Store({
       }
     },
     sortInterventions:function () {
-      
-    }
-    
+
+    },
+
+
 
   },
   actions:{
