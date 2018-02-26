@@ -26,7 +26,8 @@ export default new Vuex.Store({
       client:"",
       etat:""
     },
-
+    pageSize:0,
+    pageNumber:1,
   },
 
   getters:{
@@ -155,12 +156,12 @@ export default new Vuex.Store({
           state.sortState[key] = "";
       }
     },
-    sortInterventions:function () {
-
+    changePageSize:function(state, pageSize) {
+      state.pageSize = pageSize;
     },
-
-
-
+    changePageNumber:function(state, pageNumber) {
+      state.pageNumber = pageNumber;
+    },
   },
   actions:{
     //méthodes de MAJ à appeler via 'this.$store.dispatch' dans les composants
@@ -188,6 +189,12 @@ export default new Vuex.Store({
     },
     changeSortValue:function(context, column) {
       context.commit('changeSortValue', column);
-    }
+    },
+    changePageSize:function(context, pageSize) {
+      context.commit('changePageSize', pageSize);
+    },
+    changePageNumber:function(context, pageNumber) {
+      context.commit('changePageNumber', pageNumber);
+    },
   }
 })
