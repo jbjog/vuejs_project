@@ -13,6 +13,17 @@ export default {
     intervention,
     //columnfilter
   },
+  methods: {
+    sortByColumn:function (column) {
+      this.$store.dispatch('changeSortValue',column);
+    },
+    isAscending:function (column) {
+      return this.$store.getters.getSorted[column] ==="a";
+    },
+    isDescending:function (column) {
+      return this.$store.getters.getSorted[column] ==="d";
+    },
+  },
   computed: {
     getInterventions: function () {
       return this.$store.getters.getInterventions;
@@ -22,6 +33,9 @@ export default {
         //this.$store.dispatch('changefilterColumnValue', this.columnValueFilter, this.columnIndex);
 
 
-    }
+    },
+    getSortedState:function () {
+      return this.$store.getters.getSorted;
+    },
   }
 }

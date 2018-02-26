@@ -87,3 +87,7 @@
     width:5%;
   }
 }
+th > img {
+  width: 1.5rem;
+  float : right;
+}

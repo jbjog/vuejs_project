@@ -63,6 +63,24 @@ export default new Vuex.Store({
     },
 
     getSortedInterventions: function (state) {
+      for(let key in state.sortState){
+        if (state.sortState[key]==="a")
+          return state.resultInterventions.sort((a, b) => {
+            if (a[key] < b[key])
+              return -1;
+            if (a[key] > b[key])
+              return 1;
+            return 0;
+          });
+        if (state.sortState[key]==="d")
+          return state.resultInterventions.sort((a, b) => {
+            if (a[key] < b[key])
+              return 1;
+            if (a[key] > b[key])
+              return -1;
+            return 0;
+          });
+      }
       return state.resultInterventions ;
     },
 
