@@ -38,7 +38,7 @@ export default new Vuex.Store({
     //retourne la liste des interventions
     getInterventions:function (state, getters) {
 
-
+      state.selected = [];
       state.resultInterventions = state.interventions;
 
       state.resultInterventions = getters.getFilteredIntervention;
