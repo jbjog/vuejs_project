@@ -1,6 +1,8 @@
 <template>
   <div>
-    <img id="logo" src="./../assets/logo.png"/>
+    <div id="logo" >
+      <img src="./../assets/logo.png"/>
+    </div>
     <h1>Interventions</h1>
 
     <formintervention></formintervention>

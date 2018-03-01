@@ -1,6 +1,6 @@
 #app {
   text-align: center;
-  width:80%;
+  width:90%;
   margin: auto;
   /*font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -9,10 +9,18 @@
   margin-top: 60px;*/
 }
 #logo {
-  width: 10rem;
-  position: fixed;
+  position: absolute;
   top : 2rem;
   left : 2rem;
+}
+#logo > img{
+  width: 10rem;
+}
+@media (max-width: 650px) {
+  #logo {
+    position: relative;
+    left: 0;
+  }
 }
 button{
   border-radius: 0.7rem;
