@@ -11,6 +11,8 @@ export default new Vuex.Store({
 
     interventions:data.interventions,
     filterValue:'',
+    filterValueColumn: '',
+    filterColumnName: '',
     resultInterventions:[],
     pagedInterventions:[],
 
@@ -107,7 +109,23 @@ export default new Vuex.Store({
     },
 
     getFilteredColumnInterventions: function(state) {
-      return state.resultInterventions;
+      let filteredArray = [];
+      let expr = new RegExp(state.filterValueColumn, "i");
+      for (let i = 0; i < state.resultInterventions.length; i++) {
+        let test = false;
+        (Object.values(state.resultInterventions[i])).forEach(function (item, index, key, autre) {
+          if ((Object.keys(state.resultInterventions[i])[index]) == state.filterColumnName) {
+            if (expr.test(item) &&(test === false)) {
+              filteredArray.push(state.resultInterventions[i]);
+              test = true;
+            }
+          }else if(state.filterColumnName == "") {
+            filteredArray.push(state.resultInterventions[i]);
+          }
+
+        })
+      }
+      return filteredArray;
     },
 
     getFilteredIntervention: function(state) {
@@ -181,6 +199,14 @@ export default new Vuex.Store({
     changePageNumber:function(state, pageNumber) {
       state.pageNumber = pageNumber;
     },
+
+    changeValueColumnFilter:function(state, filterValueColumn) {
+      state.filterValueColumn = filterValueColumn;
+    },
+
+    changeNameColumnFilter:function(state, filterColumnName) {
+      state.filterColumnName = filterColumnName;
+    },
   },
   actions:{
     //méthodes de MAJ à appeler via 'this.$store.dispatch' dans les composants
@@ -214,6 +240,14 @@ export default new Vuex.Store({
     },
     changePageNumber:function(context, pageNumber) {
       context.commit('changePageNumber', pageNumber);
+    },
+
+    changeValueColumnFilter:function(context, filterValueColumn) {
+      context.commit('changeValueColumnFilter', filterValueColumn);
+    },
+
+    changeNameColumnFilter:function(context, filterNameColumn) {
+      context.commit('changeNameColumnFilter', filterNameColumn);
     },
   }
 })

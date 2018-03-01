@@ -1,4 +1,3 @@
-
 export default {
 
   name: 'ColumnFilter',
@@ -8,7 +7,9 @@ export default {
 
     return {
 
-      filterValue: ''
+      filterValue: '',
+      columnList : ['id', 'titre', 'resumee', 'affectation', 'client', 'etat'],
+      column: '',
 
     }
 
@@ -16,8 +17,13 @@ export default {
   methods: {
 
     catchSearch() {
-      this.$store.dispatch('changeColumnFilter', this.filterValue);
+
+      this.$store.dispatch('changeValueColumnFilter', this.filterValue);
+      this.$store.dispatch('changeNameColumnFilter', this.column);
+
     }
+
+
 
   },
 

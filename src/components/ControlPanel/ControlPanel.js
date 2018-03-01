@@ -1,9 +1,11 @@
 import globalfilter from '@/components/Global_Filter/Global_Filter.vue'
+import columnfilter from '@/components/ColumnFilter/ColumnFilter.vue'
 
 export default {
   name: 'ControlPanel',
   components: {
-    globalfilter
+    globalfilter,
+    columnfilter
   },
   data() {
     return {

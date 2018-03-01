@@ -1,6 +1,7 @@
 <template>
   <div id="controlpanel">
     <globalfilter></globalfilter>
+    <columnfilter></columnfilter>
     <button id="multiple-delete-button" class="red" @click="multipleDelete">Supprimer</button>
     <button id="show-form-intervention" class="green" @click="showFormPanel">Ajouter</button>
     <select v-model="pageValue" @change="changePageSize">
