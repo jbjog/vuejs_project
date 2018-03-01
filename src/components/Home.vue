@@ -6,7 +6,7 @@
     <h1>Interventions</h1>
 
     <formintervention></formintervention>
-    <globalfilter></globalfilter>
+
     <controlpanel></controlpanel>
     <tableau></tableau>
 
@@ -18,7 +18,7 @@
   import tableau from '@/components/Tableau/Tableau.vue'
   import controlpanel from '@/components/ControlPanel/ControlPanel.vue'
   import formintervention from '@/components/FormIntervention/FormIntervention.vue'
-  import globalfilter from '@/components/Global_Filter/Global_Filter.vue'
+
 
   export default {
     name: 'Home',
@@ -26,7 +26,7 @@
       tableau,
       controlpanel,
       formintervention,
-      globalfilter
+
     }
   }
 </script>

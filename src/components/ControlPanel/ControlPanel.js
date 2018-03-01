@@ -1,7 +1,9 @@
+import globalfilter from '@/components/Global_Filter/Global_Filter.vue'
+
 export default {
   name: 'ControlPanel',
   components: {
-
+    globalfilter
   },
   data() {
     return {
