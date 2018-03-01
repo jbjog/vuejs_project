@@ -1,5 +1,10 @@
 #controlpanel{
-  margin:20px;
+  margin:2rem;
   text-align: right;
+}
+@media (max-width: 650px) {
+  #controlpanel{
+    text-align: center;
+  }
 }
 

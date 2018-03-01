@@ -12,6 +12,7 @@ export default new Vuex.Store({
     interventions:data.interventions,
     filterValue:'',
     resultInterventions:[],
+    pagedInterventions:[],
 
     lists:{
       techniciens:data.techniciens,
@@ -48,9 +49,9 @@ export default new Vuex.Store({
 
       state.resultInterventions = getters.getSortedInterventions;
 
-      state.resultInterventions = getters.getPageInterventions;
+      state.pagedInterventions = getters.getPageInterventions;
 
-      return state.resultInterventions;
+      return state.pagedInterventions;
     },
 
 
@@ -62,7 +63,17 @@ export default new Vuex.Store({
     getSorted:function (state) {
       return state.sortState
     },
-
+    getPageNumber:function (state) {
+      return state.pageNumber
+    },
+    getPageOccurrences: function (state) {
+      if (state.pageSize ===0)
+        return 1;
+      if (state.resultInterventions.length % state.pageSize === 0)
+        return Math.floor(state.resultInterventions.length / state.pageSize);
+      else
+        return Math.floor(state.resultInterventions.length / state.pageSize) +1;
+    },
     getSortedInterventions: function (state) {
       for(let key in state.sortState){
         if (state.sortState[key]==="a")
@@ -86,7 +97,13 @@ export default new Vuex.Store({
     },
 
     getPageInterventions: function(state) {
-      return state.resultInterventions;
+      if (state.pageSize===0)
+        return state.resultInterventions;
+      else{
+        let startIndex = (state.pageNumber-1) * state.pageSize;
+        let endIndex = state.pageNumber * state.pageSize;
+        return state.resultInterventions.slice(startIndex,endIndex);
+      }
     },
 
     getFilteredColumnInterventions: function(state) {
@@ -106,7 +123,7 @@ export default new Vuex.Store({
         })
       }
       return filteredArray;
-    }
+    },
   },
   mutations:{
     //méthodes de MAJ à appeler depuis les 'actions'
@@ -150,6 +167,8 @@ export default new Vuex.Store({
         if (key===column){
           if (state.sortState[key]==="a")
             state.sortState[key] = "d";
+          else if (state.sortState[key]==="d")
+            state.sortState[key] = "";
           else
             state.sortState[key] = "a";
         }else

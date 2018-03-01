@@ -1,4 +1,4 @@
-@media (max-width: 500px) {
+@media (max-width: 650px) {
 
   .responsive-table-line td:before {
     content: attr(data-title);
@@ -12,8 +12,12 @@
   .responsive-table-line tr {
     display: block;
   }
-  .responsive-table-line thead tr {
-    display:none;
+  .responsive-table-line thead tr th {
+    display:inline-block;
+    width: 30%;
+  }
+  .responsive-table-line thead tr th.mobile-hide {
+     display:none;
   }
 
   .responsive-table-line td {
@@ -64,7 +68,7 @@
     margin-bottom: 10px;
   }
 }
-@media (min-width: 501px) {
+@media (min-width: 651px) {
   .responsive-table-line td.col1{
     width:5%;
   }
@@ -90,4 +94,11 @@
 th > img {
   width: 1.5rem;
   float : right;
+}
+#page button{
+  margin:1rem;
+}
+.activePage{
+  background-color: transparent;
+  color: black;
 }

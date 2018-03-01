@@ -1,12 +1,7 @@
 <template>
     <div  class="responsive-table-line">
       <table id="listeinterventions"  class="table table-bordered">
-        <tfoot>
-        <tr>
-        </tr>
-        </tfoot>
         <thead>
-
         <tr>
           <th @click="sortByColumn('id')" >
             Id
@@ -38,13 +33,21 @@
             <img v-show="isAscending('etat')" src="./../../assets/sorta.png"/>
             <img v-show="isDescending('etat')" src="./../../assets/sortd.png"/>
           </th>
-          <th>Actions</th>
+          <th class="mobile-hide">Actions</th>
         </tr>
         </thead>
         <tbody>
           <intervention v-for="task in getInterventions" :key="task.id" v-bind:elt="task"></intervention>
         </tbody>
       </table>
+      <div id="page">
+        <button v-for="pageOcc in getPagesArray"
+                :disabled="isActivePage(pageOcc)"
+                :class="isActivePage(pageOcc)? activePage : ''"
+                @click="changePageNumber(pageOcc)">
+          {{ pageOcc  }}
+        </button>
+      </div>
     </div>
 </template>
 

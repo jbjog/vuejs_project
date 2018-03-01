@@ -5,7 +5,8 @@ export default {
   },
   data() {
     return {
-
+      pageValue:"Tout",
+      pageSizeList:["Tout","5","10","15","20","50","100"]
     }
   },
   methods: {
@@ -17,6 +18,13 @@ export default {
         this.$store.dispatch('deleteIntervention',this.$store.getters.getSelected[i]);
       }
       this.$store.dispatch('initSelected');
-    }
+    },
+    changePageSize(){
+      if (this.pageValue===this.pageSizeList[0]){
+        this.$store.dispatch('changePageSize',0);
+      }else{
+        this.$store.dispatch('changePageSize', parseInt( this.pageValue));
+      }
+    },
   }
 }
