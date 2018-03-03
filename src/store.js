@@ -113,14 +113,15 @@ export default new Vuex.Store({
       let expr = new RegExp(state.filterValueColumn, "i");
       for (let i = 0; i < state.resultInterventions.length; i++) {
         let test = false;
-        (Object.values(state.resultInterventions[i])).forEach(function (item, index, key, autre) {
-          if ((Object.keys(state.resultInterventions[i])[index]) == state.filterColumnName) {
+        (Object.values(state.resultInterventions[i])).forEach(function (item, index) {
+          if ((Object.keys(state.resultInterventions[i])[index]) === state.filterColumnName) {
             if (expr.test(item) &&(test === false)) {
               filteredArray.push(state.resultInterventions[i]);
               test = true;
             }
-          }else if(state.filterColumnName == "") {
+          }else if(state.filterColumnName === "" &&(test === false) ) {
             filteredArray.push(state.resultInterventions[i]);
+            test = true;
           }
 
         })
@@ -133,7 +134,7 @@ export default new Vuex.Store({
       let expr = new RegExp(state.filterValue, "i");
       for (let i = 0; i < state.resultInterventions.length; i++) {
         let test = false;
-        (Object.values(state.resultInterventions[i])).forEach(function (item, index) {
+        (Object.values(state.resultInterventions[i])).forEach(function (item) {
           if (expr.test(item) &&(test === false)) {
             filteredArray.push(state.resultInterventions[i]);
             test = true;
