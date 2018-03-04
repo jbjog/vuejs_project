@@ -6,8 +6,7 @@ export default {
   data() {
     return {
       columnValueFilter :'',
-      columnIndex: 0,
-      activePage:"activePage"
+      columnIndex: 0
     }
   },
   components: {
@@ -24,12 +23,6 @@ export default {
     isDescending:function (column) {
       return this.$store.getters.getSorted[column] ==="d";
     },
-    isActivePage:function (number) {
-      return number === this.$store.getters.getPageNumber;
-    },
-    changePageNumber:function (value) {
-      this.$store.dispatch('changePageNumber',value);
-    },
   },
   computed: {
     getInterventions: function () {
@@ -44,12 +37,5 @@ export default {
     getSortedState:function () {
       return this.$store.getters.getSorted;
     },
-    getPagesArray(){
-      let res =[];
-      for (let i=0;i<this.$store.getters.getPageOccurrences;i++){
-        res.push(i+1);
-      }
-      return res;
-    }
   }
 }

@@ -196,6 +196,7 @@ export default new Vuex.Store({
     },
     changePageSize:function(state, pageSize) {
       state.pageSize = pageSize;
+      state.pageNumber = 1;
     },
     changePageNumber:function(state, pageNumber) {
       state.pageNumber = pageNumber;

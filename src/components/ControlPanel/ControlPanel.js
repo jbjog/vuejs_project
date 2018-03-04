@@ -30,5 +30,22 @@ export default {
         this.$store.dispatch('changePageSize', parseInt( this.pageValue));
       }
     },
+    isActivePage:function (number) {
+      return number === this.$store.getters.getPageNumber;
+    },
+    changePageNumber:function (value) {
+      this.$store.dispatch('changePageNumber',value);
+    },
+  },
+  computed:{
+    getPagesArray(){
+      let res =[];
+      for (let i=0;i<this.$store.getters.getPageOccurrences;i++){
+        res.push(i+1);
+      }
+      if (res.length===1)
+        return [];
+      return res;
+    }
   }
 }

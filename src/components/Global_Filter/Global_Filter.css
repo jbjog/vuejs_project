@@ -1,0 +1,8 @@
+@media (max-width: 650px) {
+  #globalFilterDiv{
+    /*display: block;*/
+  }
+  #globalFilterDiv input{
+    /*width: 100%;*/
+  }
+}

@@ -1,10 +1,13 @@
 <template>
-  <div>
+  <div id="columnFilterDiv">
 
-    <input v-on:keyup="catchSearch" type="text" v-model="filterValue"/>
-    <select v-model="column" @change="catchSearch">
-      <option v-for="columnName in columnList">{{columnName}}</option>
-    </select>
+    <fieldset>
+      <legend>Recherche par colonne</legend>
+      <input v-on:keyup="catchSearch" type="text" v-model="filterValue"/>
+      <select v-model="column" @change="catchSearch">
+        <option v-for="columnName in columnList">{{columnName}}</option>
+      </select>
+    </fieldset>
   </div>
 
 </template>

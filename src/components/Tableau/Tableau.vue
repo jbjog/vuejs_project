@@ -40,14 +40,6 @@
           <intervention v-for="task in getInterventions" :key="task.id" v-bind:elt="task"></intervention>
         </tbody>
       </table>
-      <div id="page">
-        <button v-for="pageOcc in getPagesArray"
-                :disabled="isActivePage(pageOcc)"
-                :class="isActivePage(pageOcc)? activePage : ''"
-                @click="changePageNumber(pageOcc)">
-          {{ pageOcc  }}
-        </button>
-      </div>
     </div>
 </template>
 

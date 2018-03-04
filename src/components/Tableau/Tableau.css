@@ -95,10 +95,3 @@ th > img {
   width: 1.5rem;
   float : right;
 }
-#page button{
-  margin:1rem;
-}
-.activePage{
-  background-color: transparent;
-  color: black;
-}

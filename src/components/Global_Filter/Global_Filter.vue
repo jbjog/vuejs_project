@@ -1,9 +1,11 @@
 <template>
-  <div>
+  <div id="globalFilterDiv">
 
-  <input v-on:keyup="catchSearch" type="text" v-model="filterValue"/>
-
-</div>
+    <fieldset>
+      <legend>Recherche par mot clé</legend>
+      <input v-on:keyup="catchSearch" type="text" v-model="filterValue"/>
+    </fieldset>
+  </div>
 
 </template>
 
