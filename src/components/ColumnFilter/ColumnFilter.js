@@ -8,7 +8,14 @@ export default {
     return {
 
       filterValue: '',
-      columnList : ['id', 'titre', 'resumee', 'affectation', 'client', 'etat'],
+      columnList : [
+        {value:'id',label:'Id'},
+        {value:'titre',label:'Titre'},
+        {value:'resumee',label:'Résumé'},
+        {value:'affectation',label:'Affectation'},
+        {value:'client',label:'Client'},
+        {value:'etat',label:'Etat'}
+      ],
       column: '',
 
     }
@@ -21,7 +28,13 @@ export default {
       this.$store.dispatch('changeValueColumnFilter', this.filterValue);
       this.$store.dispatch('changeNameColumnFilter', this.column);
 
-    }
+    },
+    clearFilter(){
+      this.filterValue='';
+      this.column='';
+      this.$store.dispatch('changeValueColumnFilter', this.filterValue);
+      this.$store.dispatch('changeNameColumnFilter', this.column);
+    },
 
 
 

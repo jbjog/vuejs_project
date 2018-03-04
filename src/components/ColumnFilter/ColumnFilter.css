@@ -1,5 +1,8 @@
 @media (max-width: 650px) {
-  #globalFilterDiv{
-    /*display: block;*/
+  #columnFilterDiv{
+    display: block;
+  }
+  #columnFilterDiv .inputDiv, #columnFilterDiv input,#columnFilterDiv select{
+    width: 100%;
   }
 }

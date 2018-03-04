@@ -16,6 +16,10 @@ export default {
 
     catchSearch() {
       this.$store.dispatch('changeFilterValue', this.filterValue);
+    },
+    clearFilter(){
+      this.filterValue='';
+      this.$store.dispatch('changeFilterValue', this.filterValue);
     }
 
   },

@@ -5,11 +5,12 @@
 #controlpanel > * {
   display: inline-block;
   background-color: white;
-  /*width: auto;*/
+}
+#controlpanel input,#controlpanel select{
+  border-radius: 0.6rem;
 }
 #controlpanel input{
   min-width: 25rem;
-  border-radius: 2rem;
 }
 #page{
   display: block;
@@ -35,6 +36,26 @@ fieldset{
   padding: .35em .625em .75em;
   margin: 0 2px;
 }
+.inputDiv{
+   position: relative;
+   display: inline-block;
+ }
+.inputDiv input{
+  padding-right: 2rem;
+}
+.deleteFilter{
+  display: inline-block;
+  text-align: center;
+  width: 2rem;
+  position: absolute;
+  top: 0.25rem;
+  right: 0;
+  border-radius: 1rem;
+  margin: auto;
+}
+.deleteFilter:hover{
+  background-color: lightgray;
+}
 @media (max-width: 650px) {
   #controlpanel{
     text-align: center;
@@ -50,7 +71,6 @@ fieldset{
     width: 100%;
   }
   #page{
-    min-height: 4rem;
     position: fixed;
     padding-top: 1rem;
     top:4rem;

@@ -3,7 +3,10 @@
 
     <fieldset>
       <legend>Recherche par mot clé</legend>
-      <input v-on:keyup="catchSearch" type="text" v-model="filterValue"/>
+      <div class="inputDiv">
+        <input v-on:keyup="catchSearch" type="text" v-model="filterValue"/>
+        <span @click="clearFilter" class="deleteFilter noselect">X</span>
+      </div>
     </fieldset>
   </div>
 
