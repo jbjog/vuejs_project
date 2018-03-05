@@ -154,7 +154,9 @@ export default new Vuex.Store({
       let interventionsLength = state.interventions.length;
       let resultLength = state.resultInterventions.length;
       let startIndex = ((state.pageNumber-1) * state.pageSize) +1;
-      let endIndex = state.pageNumber * (state.pageSize == 0? resultLength : state.pageSize)  ;
+      startIndex = resultLength > 0 ? startIndex : 0;
+      let endIndex = state.pageNumber * (state.pageSize == 0  ? resultLength : state.pageSize)  ;
+      endIndex = endIndex > resultLength ? resultLength : endIndex;
       let messageDisplay = ' Affichage de '+ startIndex + ' - ' + endIndex + ' de ' + resultLength + ' entrées (filtrées de ' + interventionsLength  + ' entrées)';
       return messageDisplay;
     }
@@ -195,6 +197,7 @@ export default new Vuex.Store({
     },
     changeFilterValue:function (state, filtervalue) {
       state.filterValue = filtervalue;
+      state.pageNumber = 1;
     },
     changeSortValue:function (state, column) {
       for(let key in state.sortState){
@@ -219,10 +222,12 @@ export default new Vuex.Store({
 
     changeValueColumnFilter:function(state, filterValueColumn) {
       state.filterValueColumn = filterValueColumn;
+      state.pageNumber = 1;
     },
 
     changeNameColumnFilter:function(state, filterColumnName) {
       state.filterColumnName = filterColumnName;
+      state.pageNumber = 1;
     },
   },
   actions:{
