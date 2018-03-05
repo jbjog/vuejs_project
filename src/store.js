@@ -18,7 +18,7 @@ export default new Vuex.Store({
 
     lists:{
       techniciens:data.techniciens,
-      etats:data.techniciens
+      etats:data.etats
     },
     selected:[],
     sortState:{
@@ -32,6 +32,8 @@ export default new Vuex.Store({
     pageSize:0,
     pageNumber:1,
   },
+
+
 
   getters:{
     //méthodes de récupération de données à appeler via 'this.$store.getters' dans les composants
@@ -143,6 +145,15 @@ export default new Vuex.Store({
       }
       return filteredArray;
     },
+
+    getDisplayMessagePagin: function(state) {
+
+      let interventionsLength = state.interventions.length;
+      let resultLength = state.resultInterventions.length;
+      let startIndex = ((state.pageNumber-1) * state.pageSize) +1;
+      let endIndex = state.pageNumber * state.pageSize;
+      let messageDisplay = ' Affichage de '+ startIndex + ' - ' + endIndex + ' de ' + resultLength + ' entrées (filtrées de ' + interventionsLength  + ' entrées)';
+    }
   },
   mutations:{
     //méthodes de MAJ à appeler depuis les 'actions'

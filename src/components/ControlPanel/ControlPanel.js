@@ -46,6 +46,9 @@ export default {
       if (res.length===1)
         return [];
       return res;
+    },
+    getDisplayMessagePagin() {
+      return this.$store.getters.getDisplayMessagePagin;
     }
   }
 }

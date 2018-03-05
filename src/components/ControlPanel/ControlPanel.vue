@@ -17,6 +17,9 @@
         {{ pageOcc  }}
       </button>
     </div>
+    <div>
+     <span> {{ getDisplayMessagePagin }}</span>
+    </div>
   </div>
 </template>
 
