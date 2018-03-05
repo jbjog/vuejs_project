@@ -36,6 +36,8 @@ export default {
     changePageNumber:function (value) {
       this.$store.dispatch('changePageNumber',value);
     },
+
+
   },
   computed:{
     getPagesArray(){
@@ -49,6 +51,10 @@ export default {
     },
     getDisplayMessagePagin() {
       return this.$store.getters.getDisplayMessagePagin;
+    },
+    makeTextFile : function () {
+      let content = JSON.stringify(this.$store.getters.getAll);
+      return "data:application/json," + encodeURIComponent(content);
     }
   }
 }

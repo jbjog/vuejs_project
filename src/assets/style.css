@@ -23,14 +23,22 @@
     left: 0;
   }
 }
-button{
+.button{
+  display: inline-block;
+}
+.button:hover,.button:focus,.button:active{
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+button, .button{
   border-radius: 0.7rem;
   text-decoration: none;
   color: white;
   padding: 0.2rem 1rem;
   text-transform: uppercase;
 }
-button.green{
+button.green, .button.green{
   background-color: #00B050;
   background-image:
     -webkit-gradient(linear, left top, left bottom, from(#00B050), to(#007635));
@@ -40,7 +48,7 @@ button.green{
   background-image: -o-linear-gradient(top, #00B050, #007635);
   background-image: linear-gradient(to bottom, #00B050, #007635);
 }
-button.green:hover {
+button.green:hover,.button.green:hover {
   background-color: #007635;
   background-image:
     -webkit-gradient(linear, left top, left bottom, from(#007635), to(#00B050));
@@ -50,7 +58,7 @@ button.green:hover {
   background-image: -o-linear-gradient(top, #007635, #00B050);
   background-image: linear-gradient(to bottom, #007635, #00B050);
 }
-button.blue{
+button.blue,.button.blue{
   background-color: #0086EA;
   background-image:
     -webkit-gradient(linear, left top, left bottom, from(#0086EA), to(#0056A4));
@@ -60,7 +68,7 @@ button.blue{
   background-image: -o-linear-gradient(top, #0086EA, #0056A4);
   background-image: linear-gradient(to bottom, #0086EA, #0056A4);
 }
-button.blue:hover {
+button.blue:hover,.button.blue:hover {
   background-color: #0056A4;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#0056A4), to(#0086EA));
   background-image: -webkit-linear-gradient(top, #0056A4, #0086EA);
@@ -69,7 +77,7 @@ button.blue:hover {
   background-image: -o-linear-gradient(top, #0056A4, #0086EA);
   background-image: linear-gradient(to bottom, #0056A4, #0086EA);
 }
-button.red{
+button.red,.button.red{
   background-color: #FF0000;
   background-image:
     -webkit-gradient(linear, left top, left bottom, from(#FF0000), to(#A20000));
@@ -81,7 +89,7 @@ button.red{
   /*filter:progid:DXImageTransform.Microsoft.gradient
   (GradientType=0,startColorstr=#49c0f0, endColorstr=#2CAFE3);*/
 }
-button.red:hover {
+button.red:hover,.button.red:hover {
   background-color: #A20000;
   background-image:
     -webkit-gradient(linear, left top, left bottom, from(#A20000), to(#FF0000));

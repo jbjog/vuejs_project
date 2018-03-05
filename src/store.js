@@ -36,6 +36,9 @@ export default new Vuex.Store({
 
 
   getters:{
+    getAll:function (state) {
+      return state.interventions;
+    },
     //méthodes de récupération de données à appeler via 'this.$store.getters' dans les composants
     //retourne les listes des données fixes
     getLists:function (state) {

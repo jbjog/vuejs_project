@@ -3,6 +3,7 @@
     <globalfilter></globalfilter>
     <columnfilter></columnfilter>
     <div id="buttons">
+      <a class="button blue" download="export.json" v-bind:href="makeTextFile">Exporter</a>
       <button id="multiple-delete-button" class="red" @click="multipleDelete">Supprimer</button>
       <button id="show-form-intervention" class="green" @click="showFormPanel">Ajouter</button>
       <select v-model="pageValue" @change="changePageSize">
