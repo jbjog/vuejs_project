@@ -248,9 +248,6 @@ export default new Vuex.Store({
     initSelected:function (context) {
       context.commit('initSelected');
     },
-    changeTestValue:function (context) {
-      context.commit('changeTestValue')
-    },
     changeFilterValue:function(context, filterValue) {
       context.commit('changeFilterValue', filterValue);
     },

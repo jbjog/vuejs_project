@@ -43,5 +43,5 @@
     </div>
 </template>
 
-<script src="./Tableau.js"/>
-<style src="./Tableau.css"/>
+<script src="InterventionTable.js"/>
+<style src="./InterventionTable.css"/>

@@ -12,5 +12,5 @@
 
 </template>
 
-<script src="./Global_Filter.js"/>
-<style src="./Global_Filter.css"/>
+<script src="GlobalFilter.js"/>
+<style src="./GlobalFilter.css"/>

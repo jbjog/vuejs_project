@@ -15,7 +15,7 @@
 
 
 <script>
-  import tableau from '@/components/Tableau/Tableau.vue'
+  import tableau from '@/components/Tableau/InterventionTable.vue'
   import controlpanel from '@/components/ControlPanel/ControlPanel.vue'
   import formintervention from '@/components/FormIntervention/FormIntervention.vue'
 
