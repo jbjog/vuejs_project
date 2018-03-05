@@ -4,5 +4,6 @@
   }
   #columnFilterDiv .inputDiv, #columnFilterDiv input,#columnFilterDiv select{
     width: 100%;
+    min-width: 0;
   }
 }
