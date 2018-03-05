@@ -1,5 +1,4 @@
 import intervention from '@/components/Intervention/Intervention.vue';
-//import columnfilter from '@/components/ColumnFilter/ColumnFilter.vue'
 
 export default {
   name: 'Tableau',
@@ -10,8 +9,7 @@ export default {
     }
   },
   components: {
-    intervention,
-    //columnfilter
+    intervention
   },
   methods: {
     sortByColumn:function (column) {
@@ -27,12 +25,6 @@ export default {
   computed: {
     getInterventions: function () {
       return this.$store.getters.getInterventions;
-    },
-    filterColumn: function() {
-        console.log('eyh')
-        //this.$store.dispatch('changefilterColumnValue', this.columnValueFilter, this.columnIndex);
-
-
     },
     getSortedState:function () {
       return this.$store.getters.getSorted;
