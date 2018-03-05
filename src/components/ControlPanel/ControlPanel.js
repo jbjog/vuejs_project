@@ -1,4 +1,4 @@
-import globalfilter from '@/components/Global_Filter/GobalFilter.vue'
+import globalfilter from '@/components/GlobalFilter/GlobalFilter.vue'
 import columnfilter from '@/components/ColumnFilter/ColumnFilter.vue'
 
 export default {

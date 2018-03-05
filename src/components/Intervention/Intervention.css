@@ -15,3 +15,9 @@ td{
 td > input[type="checkbox"]{
   width: auto;
 }
+
+.col3 > span {
+  display:inline-block;
+  max-height: 10rem;
+  overflow: auto;
+}

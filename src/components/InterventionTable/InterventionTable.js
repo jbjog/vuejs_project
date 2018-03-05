@@ -1,7 +1,7 @@
 import intervention from '@/components/Intervention/Intervention.vue';
 
 export default {
-  name: 'Tableau',
+  name: 'InterventionTable',
   data() {
     return {
       columnValueFilter :'',

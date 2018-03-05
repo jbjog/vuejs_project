@@ -8,14 +8,14 @@
     <formintervention></formintervention>
 
     <controlpanel></controlpanel>
-    <tableau></tableau>
+    <interventionTable></interventionTable>
 
   </div>
 </template>
 
 
 <script>
-  import tableau from '@/components/Tableau/InterventionTable.vue'
+  import interventionTable from '@/components/InterventionTable/InterventionTable.vue'
   import controlpanel from '@/components/ControlPanel/ControlPanel.vue'
   import formintervention from '@/components/FormIntervention/FormIntervention.vue'
 
@@ -23,7 +23,7 @@
   export default {
     name: 'Home',
     components: {
-      tableau,
+      interventionTable,
       controlpanel,
       formintervention,
 
