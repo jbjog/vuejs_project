@@ -151,8 +151,9 @@ export default new Vuex.Store({
       let interventionsLength = state.interventions.length;
       let resultLength = state.resultInterventions.length;
       let startIndex = ((state.pageNumber-1) * state.pageSize) +1;
-      let endIndex = state.pageNumber * state.pageSize;
+      let endIndex = state.pageNumber * (state.pageSize == 0? resultLength : state.pageSize)  ;
       let messageDisplay = ' Affichage de '+ startIndex + ' - ' + endIndex + ' de ' + resultLength + ' entrées (filtrées de ' + interventionsLength  + ' entrées)';
+      return messageDisplay;
     }
   },
   mutations:{
