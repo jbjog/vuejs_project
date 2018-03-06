@@ -11,7 +11,7 @@
     </td>
 
     <td @dblclick="changeEdit('resumee')" class="col3">
-      <textarea ref="resumee" @blur="unedit('resumee')" v-show="edit.resumee" v-model="internal_value.resumee" rows="2">
+      <textarea ref="resumee" @blur="unedit('resumee')" v-show="edit.resumee" v-model="internal_value.resumee" rows="4">
         {{ internal_value.resumee }}
       </textarea>
       <span v-show="!edit.resumee">{{ internal_value.resumee }}</span>
