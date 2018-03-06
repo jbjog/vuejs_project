@@ -2,7 +2,6 @@
   <div id="controlpanel">
     <globalfilter></globalfilter>
     <columnfilter></columnfilter>
-    <div id="panel-fixed">
       <div id="buttons">
         <a class="button blue" download="export.json" v-bind:href="makeTextFile">Exporter</a>
         <button id="multiple-delete-button" class="red" @click="multipleDelete">Supprimer</button>
@@ -19,7 +18,6 @@
           {{ pageOcc  }}
         </button>
       </div>
-    </div>
     <div>
      <span> {{ getDisplayMessagePagin }}</span>
     </div>
