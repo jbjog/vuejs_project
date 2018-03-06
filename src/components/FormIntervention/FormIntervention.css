@@ -7,13 +7,13 @@ label + * {
   text-align: right;
 }
 #form-header > label{
-  width: 9%;
+  width: 19%;
   display: inline-block;
   text-align: right;
   color: grey;
 }
 #form-header > h2{
-  width: 90%;
+  width: 79%;
   display: inline-block;
 }
 
@@ -25,16 +25,26 @@ label + * {
   padding: 2%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 615px) {
   .v--modal-box {
     width: auto !important;
   }
 
   .v--modal-box * {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .v--modal-box h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .v--modal-box * {
+    font-size: 1rem;
+  }
+
+  #form-header > h2{
     font-size: 1.5rem;
   }
 }
